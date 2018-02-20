@@ -17,6 +17,7 @@ uses
   System.SysUtils,
   System.Classes,
   {$ELSE}
+  cthreads,
   SysUtils,
   Classes,
   SynCommons,
@@ -56,7 +57,9 @@ var
   HTTPServerPort : Integer;
   Iterations : Integer;
   Server : TCustomHTTPServer;
+  {$IFDEF WINDOWS}
   Msg: TMsg;
+  {$ENDIF}
   Chunks : Integer;
 
 const
